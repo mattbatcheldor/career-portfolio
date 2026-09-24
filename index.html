@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Matthew Batcheldor | Selected Work & Case Studies</title>
+
+  <meta name="description"
+        content="Selected award-winning work and commercial case studies from Matthew Batcheldor across Google, SaaS, strategic partnerships, media, data and growth.">
+
+  <style>
+    :root {
+      --navy: #151d3b;
+      --blue: #1769e0;
+      --light-blue: #eef5ff;
+      --gold: #f2b632;
+      --red: #d43d3d;
+      --text: #172033;
+      --muted: #647084;
+      --light: #f6f8fb;
+      --white: #ffffff;
+      --border: #e3e8ef;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    /* NAV */
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.96);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .name {
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 100px 0 85px;
+      background:
+        radial-gradient(circle at 90% 10%, #e9f3ff 0, transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      max-width: 900px;
+      font-size: clamp(45px, 7vw, 76px);
+      line-height: 1.03;
+      letter-spacing: -0.055em;
+      color: var(--navy);
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin-top: 28px;
+      font-size: 21px;
+      color: var(--muted);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      background: white;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      margin-bottom: 48px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(34px, 5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* CASE STUDIES */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 34px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 50px rgba(24, 39, 75, .10);
+    }
+
+    .award {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 7px 11px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 28px;
+      background: #fff4d5;
+      color: #7d5700;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 27px;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
+    }
+
+    .client {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .skills {
+      margin-top: 22px;
+      font-size: 13px !important;
+      font-weight: 700;
+      color: var(--text) !important;
+    }
+
+    .card-link {
+      margin-top: auto;
+      padding-top: 30px;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    /* PROFILE */
+
+    .profile {
+      background: var(--navy);
+      color: white;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .profile h2 {
+      color: white;
+      font-size: 46px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+    }
+
+    .profile p {
+      color: #cdd4e6;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 18px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.07);
+      padding: 25px;
+      border-radius: 14px;
+    }
+
+    .stat strong {
+      display: block;
+      color: white;
+      font-size: 29px;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: #bbc5dc;
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    footer strong {
+      color: var(--navy);
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .linkedin {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .grid,
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-grid {
+        gap: 45px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="name">Matthew Batcheldor</div>
+
+    <div class="nav-links">
+      <a href="#work">Selected Work</a>
+      <a href="#profile">Profile</a>
+      <a href="https://www.linkedin.com/in/matthewbatcheldor/"
+         target="_blank"
+         rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <div class="container">
+
+    <div class="eyebrow">Selected Work & Recognition</div>
+
+    <h1>
+      Building growth through customers, partnerships, data and technology.
+    </h1>
+
+    <p class="hero-copy">
+      I'm Matthew Batcheldor, a commercial growth and strategic partnerships
+      leader with experience spanning Google, SaaS, media and digital
+      technology. This portfolio presents selected work where customer
+      problems became measurable commercial, product and marketing outcomes.
+    </p>
+
+    <div class="hero-tags">
+      <span class="tag">Strategic Partnerships</span>
+      <span class="tag">Enterprise GTM</span>
+      <span class="tag">Commercial Growth</span>
+      <span class="tag">SaaS</span>
+      <span class="tag">Digital Media</span>
+      <span class="tag">Data & Measurement</span>
+    </div>
+
+  </div>
+</header>
+
+
+<section id="work">
+
+  <div class="container">
+
+    <div class="section-title">
+      <div class="eyebrow">Case Studies</div>
+
+      <h2>Selected work</h2>
+
+      <p>
+        Four examples spanning SaaS growth, product partnerships,
+        customer acquisition, video strategy and data-led marketing.
+        Each case study includes the underlying problem, my role,
+        the work and its recognition.
+      </p>
+    </div>
+
+
+    <div class="grid">
+
+      <!-- XERO -->
+
+      <article class="card">
+
+        <span class="award">Google Innovation Award</span>
+
+        <h3>Xero Live Growth Dashboard</h3>
+
+        <div class="client">Xero × Google</div>
+
+        <p>
+          Turning acquisition and market data into a live executive
+          decision system supporting Xero's growth across New Zealand,
+          Australia, the UK and the US.
+        </p>
+
+        <p class="skills">
+          SaaS GTM · International Growth · Acquisition ·
+          Executive Analytics
+        </p>
+
+        <a class="card-link"
+           href="Xero_Growth_Dashboard_Case_Study_Matthew_Batcheldor_1.pdf"
+           target="_blank">
+          View full case study →
+        </a>
+
+      </article>
+
+
+      <!-- SAY IT TIKA -->
+
+      <article class="card">
+
+        <span class="award">NZDMA Gold Award</span>
+
+        <h3>Say It Tika</h3>
+
+        <div class="client">
+          Vodafone New Zealand × Google Maps
+        </div>
+
+        <p>
+          Helping turn a customer campaign addressing the pronunciation
+          of te reo Māori place names into an internal Google product
+          workstream involving Maps and mobile teams.
+        </p>
+
+        <p class="skills">
+          Strategic Partnerships · Product Influence ·
+          Enterprise Leadership · Cross-functional GTM
+        </p>
+
+        <a class="card-link"
+           href="Say_It_Tika_Case_Study_Matthew_Batcheldor.pdf"
+           target="_blank">
+          View full case study →
+        </a>
+
+      </article>
+
+
+      <!-- GENESIS -->
+
+      <article class="card">
+
+        <span class="award">2 × Silver · Beacon Awards</span>
+
+        <h3>Reading More Than the Weather</h3>
+
+        <div class="client">Genesis Energy × PHD × Google</div>
+
+        <p>
+          Turning a weather and behavioural insight into a live,
+          region-by-region media trigger designed to identify stronger
+          customer-acquisition moments.
+        </p>
+
+        <p class="skills">
+          Data Strategy · Customer Acquisition ·
+          Agency Partnership · Measurement
+        </p>
+
+        <a class="card-link"
+           href="Genesis_Reading_More_Than_The_Weather_Matthew_Batcheldor_1.pdf"
+           target="_blank">
+          View full case study →
+        </a>
+
+      </article>
+
+
+      <!-- SAMSUNG -->
+
+      <article class="card">
+
+        <span class="award">Google Industry Gold Award</span>
+
+        <h3>Video Effectiveness</h3>
+
+        <div class="client">Samsung × Starcom × Google</div>
+
+        <p>
+          Reframing how video performance should be evaluated by
+          examining the very different viewing experiences and
+          measurement definitions behind YouTube and Facebook.
+        </p>
+
+        <p class="skills">
+          Video Strategy · Enterprise Client Leadership ·
+          Agency Partnership · Measurement
+        </p>
+
+        <a class="card-link"
+           href="Samsung_Starcom_Video_Effectiveness_Matthew_Batcheldor.pdf"
+           target="_blank">
+          View full case study →
+        </a>
+
+      </article>
+
+    </div>
+  </div>
+
+</section>
+
+
+<section class="profile" id="profile">
+
+  <div class="container profile-grid">
+
+    <div>
+
+      <div class="eyebrow" style="color:#79adff">
+        Commercial Leadership
+      </div>
+
+      <h2>From customer problem to commercial outcome.</h2>
+
+      <p>
+        My career has focused on building relationships with customers
+        and partners, understanding the underlying commercial problem,
+        and bringing together the people, technology and data needed
+        to solve it.
+      </p>
+
+      <p>
+        I spent 14 years at Google across the UK and New Zealand and
+        have subsequently worked across agency, media, content,
+        partnerships and growth environments.
+      </p>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div class="stat">
+        <strong>14 years</strong>
+        <span>Google UK & New Zealand</span>
+      </div>
+
+      <div class="stat">
+        <strong>4 markets</strong>
+        <span>Xero international growth programme</span>
+      </div>
+
+      <div class="stat">
+        <strong>2× Silver</strong>
+        <span>2018 Beacon Awards</span>
+      </div>
+
+      <div class="stat">
+        <strong>Gold</strong>
+        <span>Google & NZDMA recognition</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+      <strong>Matthew Batcheldor</strong>
+      <p>Commercial Growth · Strategic Partnerships · Enterprise GTM</p>
+    </div>
+
+    <a class="linkedin"
+       href="https://www.linkedin.com/in/mattbatcheldor/"
+       target="_blank"
+       rel="noopener">
+      LinkedIn →
+    </a>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
