@@ -187,6 +187,34 @@
       box-shadow: 0 18px 50px rgba(24, 39, 75, .10);
     }
 
+    .card-featured {
+      grid-column: 1 / -1;
+      min-height: 360px;
+      background: #0d0d0d;
+      border-color: #0d0d0d;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-featured::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 34px solid #e53324;
+      border-radius: 50%;
+      right: -115px;
+      top: -120px;
+      opacity: .95;
+    }
+
+    .card-featured h3 { color: #ffffff; font-size: 36px; max-width: 680px; }
+    .card-featured .client { color: #ef3b2d; }
+    .card-featured p { color: #d8d8d8; max-width: 760px; }
+    .card-featured .skills { color: #ffffff !important; }
+    .card-featured .card-link { color: #ffffff; position: relative; z-index: 1; }
+    .card-featured .award { background: #e53324; color: #ffffff; }
+
     .award {
       display: inline-block;
       align-self: flex-start;
@@ -412,8 +440,8 @@
       <h2>Selected work</h2>
 
       <p>
-        Six examples spanning SaaS growth, product partnerships,
-        customer acquisition, video strategy and data-led marketing.
+        Seven examples spanning SaaS growth, product partnerships,
+        creator and audience strategy, customer acquisition, video strategy and data-led marketing.
         Each case study includes the underlying problem, my role,
         the work and its recognition.
       </p>
@@ -421,6 +449,36 @@
 
 
     <div class="grid">
+
+      <!-- CREATOR ECONOMY - FEATURED -->
+
+      <article class="card card-featured">
+
+        <span class="award">Featured · Creator, Audience & Platform Growth</span>
+
+        <h3>From Platform to Creator Economy</h3>
+
+        <div class="client">YouTube · Brands · Agencies · Creators · Audiences · AI</div>
+
+        <p>
+          Fifteen years of perspective across the YouTube ecosystem, from helping
+          brands invest in the platform at Google to building owned audiences,
+          working with creators and original IP, and exploring how AI can improve
+          audience and commercial decision-making.
+        </p>
+
+        <p class="skills">
+          Creator Economy · Audience Growth · Platform Partnerships ·
+          Monetisation · Measurement · AI
+        </p>
+
+        <a class="card-link"
+           href="from-platform-to-creator-economy.html">
+          Explore the case study →
+        </a>
+
+      </article>
+
 
       <!-- XERO -->
 
