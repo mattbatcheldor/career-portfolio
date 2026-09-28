@@ -320,20 +320,18 @@
     .stat {
       min-height: 190px;
       padding: 28px 22px;
-      border-radius: 16px;
-      border: 1px solid #697181;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      box-shadow: inset 0 0 0 1px rgba(242,182,50,.18),
-                  0 14px 32px rgba(0,0,0,.16);
+      box-shadow: none;
     }
 
     .stat strong {
       display: block;
-      color: white;
       font-size: clamp(30px, 4vw, 40px);
       line-height: 1;
       letter-spacing: -0.035em;
@@ -341,73 +339,40 @@
     }
 
     .stat span {
-      color: rgba(255,255,255,.88);
       font-size: 13px;
       line-height: 1.45;
       font-weight: 700;
     }
 
     .stat-revenue-scale {
-      background: linear-gradient(145deg, #b51d24, #7e1117);
-      border-top: 3px solid #f2b632;
+      background: #d83a2e;
+      border-color: #d83a2e;
     }
+    .stat-revenue-scale strong,
+    .stat-revenue-scale span { color: #fffaf0; }
 
     .stat-revenue-impact {
-      background: linear-gradient(145deg, #b98418, #76520d);
-      border-top: 3px solid #f6cf67;
+      background: #e5ad32;
+      border-color: #e5ad32;
     }
+    .stat-revenue-impact strong,
+    .stat-revenue-impact span { color: #171717; }
 
     .stat-audience {
-      background: linear-gradient(145deg, #202632, #0e1118);
-      border-top: 3px solid #e53324;
+      background: #2454a6;
+      border-color: #2454a6;
     }
+    .stat-audience strong,
+    .stat-audience span { color: #fffaf0; }
 
     .stat-depth {
-      background: linear-gradient(145deg, #244a73, #142a48);
-      border-top: 3px solid #f2b632;
+      background: #f2eadc;
+      border-color: #f2eadc;
     }
+    .stat-depth strong { color: #171717; }
+    .stat-depth span { color: #343434; }
 
-    /* FOOTER */
-
-    footer {
-      padding: 55px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    footer strong {
-      color: var(--navy);
-    }
-
-    footer p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .linkedin {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    @media (max-width: 800px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 70px 0;
-      }
-
-      .grid,
-      .profile-grid {
+    .profile-grid {
         grid-template-columns: 1fr;
       }
 
@@ -786,7 +751,7 @@
       </div>
 
       <div class="stat stat-audience">
-        <strong>1 → 117K</strong>
+        <strong>117K</strong>
         <span>YouTube subscribers<br>built from launch</span>
       </div>
 
