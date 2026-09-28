@@ -318,21 +318,53 @@
     }
 
     .stat {
-      background: rgba(255,255,255,.07);
-      padding: 25px;
-      border-radius: 14px;
+      min-height: 190px;
+      padding: 28px 22px;
+      border-radius: 16px;
+      border: 1px solid #697181;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: inset 0 0 0 1px rgba(242,182,50,.18),
+                  0 14px 32px rgba(0,0,0,.16);
     }
 
     .stat strong {
       display: block;
       color: white;
-      font-size: 29px;
-      margin-bottom: 4px;
+      font-size: clamp(30px, 4vw, 40px);
+      line-height: 1;
+      letter-spacing: -0.035em;
+      margin-bottom: 16px;
     }
 
     .stat span {
-      color: #bbc5dc;
+      color: rgba(255,255,255,.88);
       font-size: 13px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .stat-revenue-scale {
+      background: linear-gradient(145deg, #b51d24, #7e1117);
+      border-top: 3px solid #f2b632;
+    }
+
+    .stat-revenue-impact {
+      background: linear-gradient(145deg, #b98418, #76520d);
+      border-top: 3px solid #f6cf67;
+    }
+
+    .stat-audience {
+      background: linear-gradient(145deg, #202632, #0e1118);
+      border-top: 3px solid #e53324;
+    }
+
+    .stat-depth {
+      background: linear-gradient(145deg, #244a73, #142a48);
+      border-top: 3px solid #f2b632;
     }
 
     /* FOOTER */
@@ -720,23 +752,22 @@
 
     <div>
 
-      <div class="eyebrow" style="color:#79adff">
-        Commercial Leadership
+      <div class="eyebrow" style="color:#f2b632">
+        Impact at Scale
       </div>
 
-      <h2>From customer problem to commercial outcome.</h2>
+      <h2>Building businesses, revenue and audiences at scale.</h2>
 
       <p>
-        My career has focused on building relationships with customers
-        and partners, understanding the underlying commercial problem,
-        and bringing together the people, technology and data needed
-        to solve it.
+        My career has been built around turning complex commercial opportunities
+        into measurable growth: scaling enterprise revenue, building strategic
+        partnerships and creating audiences from the ground up.
       </p>
 
       <p>
-        I spent 14 years at Google across the UK and New Zealand and
-        have subsequently worked across agency, media, content,
-        partnerships and growth environments.
+        Across Google and the businesses that followed, the common thread has been
+        impact at scale: connecting customers, technology, data and teams
+        to create durable commercial outcomes.
       </p>
 
     </div>
@@ -744,24 +775,24 @@
 
     <div class="stats">
 
-      <div class="stat">
+      <div class="stat stat-revenue-scale">
+        <strong>US$40M</strong>
+        <span>Annual enterprise portfolio<br>Google</span>
+      </div>
+
+      <div class="stat stat-revenue-impact">
+        <strong>US$12M</strong>
+        <span>Incremental revenue<br>delivered in 2018</span>
+      </div>
+
+      <div class="stat stat-audience">
+        <strong>1 → 117K</strong>
+        <span>YouTube subscribers<br>built from launch</span>
+      </div>
+
+      <div class="stat stat-depth">
         <strong>14 years</strong>
-        <span>Google UK & New Zealand</span>
-      </div>
-
-      <div class="stat">
-        <strong>4 markets</strong>
-        <span>Xero international growth programme</span>
-      </div>
-
-      <div class="stat">
-        <strong>2× Silver</strong>
-        <span>2018 Beacon Awards</span>
-      </div>
-
-      <div class="stat">
-        <strong>Gold</strong>
-        <span>Google & NZDMA recognition</span>
+        <span>Google<br>UK & New Zealand</span>
       </div>
 
     </div>
