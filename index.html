@@ -377,6 +377,38 @@
       .card {
         min-height: auto;
       }
+
+      /* Keep featured-card artwork decorative on narrow screens */
+      .card-featured {
+        padding: 28px 24px;
+        isolation: isolate;
+      }
+
+      .card-featured::after {
+        width: 190px;
+        height: 190px;
+        border-width: 26px;
+        right: -105px;
+        top: 105px;
+        opacity: .55;
+        z-index: -1;
+      }
+
+      .card-featured > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .card-featured .award {
+        max-width: 100%;
+        line-height: 1.45;
+        margin-bottom: 26px;
+      }
+
+      .card-featured h3 {
+        font-size: clamp(30px, 9vw, 36px);
+        line-height: 1.08;
+      }
     }
   </style>
 </head>
