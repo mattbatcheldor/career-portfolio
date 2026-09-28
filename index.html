@@ -372,24 +372,15 @@
     .stat-depth strong { color: #171717; }
     .stat-depth span { color: #343434; }
 
-    .profile-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .hero { padding: 70px 0; }
+      .grid, .profile-grid { grid-template-columns: 1fr; }
+      .profile-grid { gap: 45px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .card { min-height: auto; }
 
-      .profile-grid {
-        gap: 45px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .card {
-        min-height: auto;
-      }
-
-      /* Keep featured-card artwork decorative on narrow screens */
+      /* Preserve the original single-column mobile case-study format. */
       .card-featured {
         padding: 28px 24px;
         isolation: isolate;
@@ -402,7 +393,7 @@
         right: -105px;
         top: 105px;
         opacity: .55;
-        z-index: -1;
+        z-index: 0;
       }
 
       .card-featured > * {
