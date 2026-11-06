@@ -73,3 +73,16 @@ h1 {
   font: 700 14px var(--type-sans);
   text-transform: none;
 }
+
+/* Align reference attributions at the bottom of each card without changing mobile stacking. */
+.quote-grid blockquote {
+  display: flex;
+  flex-direction: column;
+}
+.quote-grid blockquote > p {
+  min-height: 0;
+}
+.quote-grid blockquote footer {
+  margin-top: auto;
+  padding-top: 24px;
+}
