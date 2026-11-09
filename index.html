@@ -178,9 +178,10 @@
     }
 
     .card {
+      --card-padding: 34px;
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 34px;
+      padding: var(--card-padding);
       background: white;
       display: flex;
       flex-direction: column;
@@ -198,27 +199,27 @@
       min-height: 360px;
       background: #0d0d0d;
       border-color: #0d0d0d;
-      position: relative;
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(180px, 30%);
+      gap: clamp(24px, 5vw, 60px);
     }
 
-    .card-featured::after {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border: 34px solid #e53324;
-      border-radius: 50%;
-      right: -115px;
-      top: -120px;
-      opacity: .95;
+    .featured-copy {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .featured-logo {
+      place-self: center;
+      width: min(100%, 270px);
+      height: auto;
     }
 
     .card-featured h3 { color: #ffffff !important; font-size: 36px; font-weight: 800; max-width: 900px; }
     .card-featured .client { color: #ef3b2d; }
     .card-featured p { color: #d8d8d8; max-width: 760px; }
     .card-featured .skills { color: #ffffff !important; }
-    .card-featured .card-link { color: #ffffff; position: relative; z-index: 1; }
+    .card-featured .card-link { color: #ffffff; }
     .card-featured .award { background: #e53324; color: #ffffff; }
 
     .award {
@@ -274,6 +275,35 @@
     .card-link:hover {
       text-decoration: underline;
     }
+
+    .card-visual {
+      display: flex;
+      flex: none;
+      align-items: center;
+      justify-content: center;
+      height: clamp(156px, 19vw, 220px);
+      margin: calc(-1 * var(--card-padding)) calc(-1 * var(--card-padding)) 26px;
+      border-radius: 17px 17px 0 0;
+      overflow: hidden;
+    }
+
+    .card-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .card-xero .card-visual { background: #f2fbff; }
+    .card-xero .card-visual img { height: 68%; }
+    .card-vend .card-visual { background: #41af4c; }
+    .card-vend .card-visual img { width: min(100%, 450px); object-fit: cover; }
+    .card-vodafone .card-visual { background: #ef1d26; }
+    .card-genesis .card-visual { background: #fff3e4; }
+    .card-genesis .card-visual img { height: 82%; }
+    .card-samsung .card-visual { background: #1429a0; }
+    .card-samsung .card-visual img { width: min(72%, 360px); }
+    .card-galaxy .card-visual { background: #050505; }
 
     /* CASE STUDY STORY THEMES */
     .card-xero { background:linear-gradient(145deg,#f2fbff,#dff5ff); border-color:#9eddf5; }
@@ -384,27 +414,18 @@
       .grid, .profile-grid { grid-template-columns: 1fr; }
       .profile-grid { gap: 45px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
-      .card { min-height: auto; }
+      .card { --card-padding: 24px; min-height: auto; }
 
-      /* Preserve the original single-column mobile case-study format. */
       .card-featured {
         padding: 28px 24px;
-        isolation: isolate;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
       }
 
-      .card-featured::after {
-        width: 190px;
-        height: 190px;
-        border-width: 26px;
-        right: -105px;
-        top: 105px;
-        opacity: .55;
-        z-index: 0;
-      }
-
-      .card-featured > * {
-        position: relative;
-        z-index: 1;
+      .featured-logo {
+        grid-row: 1;
+        justify-self: start;
+        width: min(100%, 180px);
       }
 
       .card-featured .award {
@@ -496,28 +517,33 @@
 
       <article class="card card-featured">
 
-        <span class="award">Featured · Creator, Audience & Platform Growth</span>
+        <div class="featured-copy">
+          <span class="award">Featured · Creator, Audience & Platform Growth</span>
 
-        <h3>YouTube: From Platform to Creator Economy</h3>
+          <h3>YouTube: From Platform to Creator Economy</h3>
 
-        <div class="client">YouTube · Brands · Agencies · Creators · Audiences · AI</div>
+          <div class="client">YouTube · Brands · Agencies · Creators · Audiences · AI</div>
 
-        <p>
-          Fifteen years of perspective across the YouTube ecosystem, from helping
-          brands invest in the platform at Google to building owned audiences,
-          working with creators and original IP, and exploring how AI can improve
-          audience and commercial decision-making.
-        </p>
+          <p>
+            Fifteen years of perspective across the YouTube ecosystem, from helping
+            brands invest in the platform at Google to building owned audiences,
+            working with creators and original IP, and exploring how AI can improve
+            audience and commercial decision-making.
+          </p>
 
-        <p class="skills">
-          Creator Economy · Audience Growth · Platform Partnerships ·
-          Monetisation · Measurement · AI
-        </p>
+          <p class="skills">
+            Creator Economy · Audience Growth · Platform Partnerships ·
+            Monetisation · Measurement · AI
+          </p>
 
-        <a class="card-link"
-           href="Matthew%20Batcheldor%20From%20Platform%20to%20Creator%20Economy_2.pdf" target="_blank">
-          Explore the case study →
-        </a>
+          <a class="card-link"
+             href="Matthew%20Batcheldor%20From%20Platform%20to%20Creator%20Economy_2.pdf" target="_blank">
+            Explore the case study →
+          </a>
+        </div>
+
+        <img class="featured-logo" src="assets/case-studies/youtube.png" alt=""
+             width="1705" height="573" loading="lazy" decoding="async">
 
       </article>
 
@@ -525,6 +551,11 @@
       <!-- XERO -->
 
       <article class="card card-xero">
+
+        <div class="card-visual">
+          <img src="assets/case-studies/xero.png" alt=""
+               width="2003" height="2048" loading="lazy" decoding="async">
+        </div>
 
         <span class="award">Google Innovation Award</span>
 
@@ -556,6 +587,11 @@
 
       <article class="card card-vend">
 
+        <div class="card-visual">
+          <img src="assets/case-studies/vend.png" alt=""
+               width="576" height="304" loading="lazy" decoding="async">
+        </div>
+
         <span class="award">Global SaaS GTM</span>
 
         <h3>Vend SaaS Growth</h3>
@@ -586,6 +622,11 @@
       <!-- SAY IT TIKA -->
 
       <article class="card card-vodafone">
+
+        <div class="card-visual">
+          <img src="assets/case-studies/vodafone.jpg" alt=""
+               width="1920" height="1561" loading="lazy" decoding="async">
+        </div>
 
         <span class="award">NZDMA Gold Award</span>
 
@@ -619,6 +660,11 @@
 
       <article class="card card-genesis">
 
+        <div class="card-visual">
+          <img src="assets/case-studies/genesis-energy.png" alt=""
+               width="652" height="661" loading="lazy" decoding="async">
+        </div>
+
         <span class="award">2 × Silver · Beacon Awards</span>
 
         <h3>Reading More Than the Weather</h3>
@@ -649,6 +695,11 @@
 
       <article class="card card-samsung">
 
+        <div class="card-visual">
+          <img src="assets/case-studies/samsung.jpg" alt=""
+               width="2000" height="1315" loading="lazy" decoding="async">
+        </div>
+
         <span class="award">Google Industry Gold Award</span>
 
         <h3>Video Effectiveness</h3>
@@ -678,6 +729,11 @@
       <!-- SAMSUNG GALAXY S7 -->
 
       <article class="card card-galaxy">
+
+        <div class="card-visual">
+          <img src="assets/case-studies/samsung-galaxy-s7.jpg" alt=""
+               width="2048" height="1365" loading="lazy" decoding="async">
+        </div>
 
         <span class="award">Think with Google Case Study</span>
 
