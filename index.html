@@ -319,6 +319,59 @@
     .card-galaxy { background:linear-gradient(145deg,#f6f4ff,#e9e4ff); border-color:#bbb0e8; }
     .card-galaxy h3{color:#30216d}.card-galaxy .client,.card-galaxy .card-link{color:#5137a5}.card-galaxy .award{background:#30216d;color:#fff}
 
+    .card-halo {
+      grid-column: 1 / -1;
+      scroll-margin-top: 88px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: clamp(20px, 4vw, 44px);
+      min-height: auto;
+    }
+
+    .card-halo .featured-copy > p + p:not(.skills) { margin-top: 12px; }
+
+    .halo-results {
+      align-self: center;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: clamp(14px, 2.4vw, 26px);
+    }
+
+    .card .halo-results-label {
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .halo-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0;
+    }
+
+    .halo-metrics > div {
+      display: flex;
+      flex-direction: column;
+      padding: clamp(9px, 1.2vw, 16px);
+      border-radius: 8px;
+      background: white;
+    }
+
+    .halo-metrics dt { color: var(--muted); font-size: 13px; }
+    .halo-metrics dd {
+      order: -1;
+      margin: 0 0 2px;
+      color: var(--navy);
+      font-size: clamp(19px, 2.55vw, 34px);
+      font-weight: 900;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.03em;
+    }
+
     /* PROFILE */
 
     .profile {
@@ -485,6 +538,7 @@
       .nav-links { display: none; }
       .hero { padding: 70px 0; }
       .grid, .profile-grid { grid-template-columns: 1fr; }
+      .card-halo { grid-template-columns: minmax(0, 1fr); }
       .profile-grid { gap: 45px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .card { --card-padding: 24px; min-height: auto; }
@@ -576,7 +630,7 @@
       <h2>Selected work</h2>
 
       <p>
-        Seven examples spanning SaaS growth, product partnerships,
+        Eight examples spanning SaaS growth, product partnerships,
         creator and audience strategy, customer acquisition, video strategy and data-led marketing.
         Each case study includes the underlying problem, my role,
         the work and its recognition.
@@ -618,6 +672,52 @@
         <img class="featured-logo" src="assets/case-studies/youtube.png" alt=""
              width="1705" height="573" loading="lazy" decoding="async">
 
+      </article>
+
+
+      <!-- ALEX GILBERT - YOUTUBE HALO EFFECT -->
+
+      <article class="card card-halo" id="alex-gilbert-halo">
+        <div class="featured-copy">
+          <span class="award">Personal volunteer project · 2024</span>
+
+          <h3>Alex Gilbert: The YouTube Shorts Halo Effect</h3>
+
+          <div class="client">Alex Gilbert · An Adoption Story</div>
+
+          <p>
+            I designed and self-funded a YouTube promotion for Alex Gilbert’s adoption
+            series. I used audience and keyword data to target a promoted Short,
+            paired it with the full-length story and tracked channel performance in
+            YouTube Studio.
+          </p>
+
+          <p>
+            After the campaign, I built ShortsHalo in Google AI Studio, using ten
+            years of channel data to analyse organic performance, explore paid
+            promotion scenarios and inform content planning.
+          </p>
+
+          <p class="skills">
+            YouTube Shorts · Creator growth · Audience development · AI ·
+            Measurement and analytics
+          </p>
+
+          <a class="card-link"
+             href="https://mattbatcheldor.github.io/growth-portfolio/#halo">
+            Explore the full case study →
+          </a>
+        </div>
+
+        <div class="halo-results">
+          <p class="halo-results-label">YouTube Studio · 28-day channel results</p>
+          <dl class="halo-metrics">
+            <div><dt>Channel views</dt><dd>159,193</dd></div>
+            <div><dt>Views above usual</dt><dd>+282%</dd></div>
+            <div><dt>Watch hours</dt><dd>19.4K</dd></div>
+            <div><dt>Subscribers gained</dt><dd>+953</dd></div>
+          </dl>
+        </div>
       </article>
 
 
