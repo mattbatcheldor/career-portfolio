@@ -97,3 +97,21 @@ h1 {
     display: none;
   }
 }
+
+#i-love-niseko {
+  scroll-margin-top: 85px;
+}
+
+.case-series {
+  display: block;
+  margin-top: 14px;
+  font: 700 14px var(--type-sans);
+  text-underline-offset: 4px;
+}
+
+.case-series img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
