@@ -123,6 +123,7 @@ h1 {
 .case.featured .case-details {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   row-gap: 0;
+  padding-bottom: 35px;
 }
 
 .case.featured .case-details > div {
