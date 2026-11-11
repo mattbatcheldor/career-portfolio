@@ -113,5 +113,48 @@ h1 {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   margin-bottom: 8px;
+}
+
+
+/* Align the three Uchi stories and their companion images. */
+.case.featured .case-details {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: 0;
+}
+
+.case.featured .case-details > div {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  min-width: 0;
+}
+
+.case.featured .case-series {
+  margin-top: 0;
+  align-self: start;
+}
+
+.case-series:hover,
+.case-series:focus-visible {
+  color: #c14d2c;
+}
+
+.case-series:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+@media (max-width: 600px) {
+  .case.featured .case-details {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+
+  .case.featured .case-details > div {
+    display: block;
+    grid-row: auto;
+  }
 }
