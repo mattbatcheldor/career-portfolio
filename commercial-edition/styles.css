@@ -177,3 +177,6 @@ h1 {
 @media(max-width:850px){.tp-pair{padding:22px!important}.tp-row{gap:28px}}
 @media(max-width:600px){.tp-row{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.tp-cover img{transition:none}.tp-cover:hover img{transform:none}}
+
+.hero-aside p{font-size:clamp(24px,2.3vw,30px);line-height:1.3}
+.hero-aside p em{font-style:normal;color:var(--accent)}
