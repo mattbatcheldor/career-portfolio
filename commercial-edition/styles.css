@@ -202,3 +202,9 @@ h1 {
 @media(max-width:1000px){.ew-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:850px){.ew-figures{flex-direction:row;flex-wrap:wrap;border-left:0;padding-left:0;border-top:1px solid #b9b7ac;padding-top:22px}.ew-figures>div{flex:1 1 200px}}
 @media(max-width:600px){.ew-row{grid-template-columns:1fr;gap:32px}}
+.ew-yt .case-top{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+.ew-yt-cover{display:block;border:1px solid #171714}
+.ew-yt-cover img{width:100%;height:auto!important;aspect-ratio:16/9;object-fit:cover;filter:none!important}
+@media(max-width:850px){.ew-yt .case-top{grid-template-columns:1fr}}
+.ew-yt .case-top .case-links{margin:14px 0 0;padding:0}
+.ew-yt .case-series img{border:1px solid #b9b7ac}
