@@ -208,3 +208,25 @@ h1 {
 @media(max-width:850px){.ew-yt .case-top{grid-template-columns:1fr}}
 .ew-yt .case-top .case-links{margin:14px 0 0;padding:0}
 .ew-yt .case-series img{border:1px solid #b9b7ac}
+
+/* Chapter 03 refinements: quieter figures and roomier mobile spacing */
+.ew-figures .metric-number{background:none;color:#171714;padding:0;font:700 clamp(30px,3vw,38px)/1.1 var(--type-sans);letter-spacing:-.02em}
+.ew-figures{border-left:0}
+.ew-figures>div{border-top:2px solid #171714;padding-top:12px}
+.ew-figures p{margin:8px 0 0;color:#5b5a50}
+.case.featured:not(.ew-yt) .case-top{padding-bottom:35px}
+@media(max-width:850px){
+  .case.featured .case-top{gap:28px}
+  .ew-figures{border-top:0;padding-top:0;gap:24px}
+  .ew-figures>div{flex:1 1 220px}
+}
+@media(max-width:600px){
+  .case.featured:not(.ew-yt) .case-top{padding-bottom:26px}
+  .case.featured .case-outcome{margin-top:18px}
+  .ew-figures .metric-number{font-size:32px}
+  .ew-figures{gap:22px}
+  .ew-wide .case-top{gap:24px}
+  .ew-wide .case-top img{height:auto;aspect-ratio:16/9}
+  .ew-yt .case-details>div{gap:0}
+  .ew-yt .case-series{margin-top:14px}
+}
