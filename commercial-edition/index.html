@@ -15,7 +15,10 @@
 #work .case-top>img{border:4px solid #000}
 
 /* Recommendation portraits: compact attribution row inside each card. */
-.quote-grid .recommendation-person{display:flex;align-items:center;gap:14px;margin-top:24px}
+.quote-grid blockquote{display:flex;flex-direction:column}
+.quote-grid blockquote>p{min-height:0}
+.quote-grid blockquote>p:last-of-type{margin-bottom:24px}
+.quote-grid .recommendation-person{display:flex;align-items:center;gap:14px;margin-top:auto;min-height:64px}
 .quote-grid .recommendation-portrait{display:block;width:64px;height:64px;flex:0 0 64px;border-radius:50%;overflow:hidden;border:1px solid #171714;background:#e9e7dd}
 .quote-grid .recommendation-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1)}
 .quote-grid .recommendation-portrait.mike-harrison img{transform:scale(1.8);transform-origin:50% 25%}
